@@ -1,5 +1,5 @@
-#Homework DOM 
-###Required
+# Homework DOM 
+### Required
 >Создайте элемент `p`, при клике на котором появляется картинка размером 100px
 >При наведении указателя мышки на картинку ее размер должен плавно увеличиваться до `200px`
 >При клике на картинке она должна исчезать
@@ -52,7 +52,7 @@ elem.onclick = function (event) {
     }
 }
 ```
-###Additional
+### Additional
 *Создайте коллекцию вложенных друг в друга html-элементов с обработчиками событий `click, mouseover, mouseout`*
 ```js
 var collection = []
@@ -112,7 +112,6 @@ for( elem of ["first", "second", "third", "fourth"]) {
 }
     console.log(collection)
 ```
-![alt text](img/1.png)
 *Или без использования addEventListener*
 ```js
 var collection = []
@@ -143,7 +142,7 @@ for( elem of ["first", "second", "third", "fourth"]) {
 }
     console.log(collection)
 ```
-###Additional
+### Additional
 *Условия предыдущего задания изменить так:*
 ```js
 var collection = []
