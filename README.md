@@ -1,8 +1,14 @@
 # Homework DOM 
 ### Required
+<<<<<<< HEAD
 *Создайте элемент `p`, при клике на котором появляется картинка размером 100px*
 *При наведении указателя мышки на картинку ее размер должен плавно увеличиваться до `200px`*
 *При клике на картинке она должна исчезать*
+=======
+>Создайте элемент `p`, при клике на котором появляется картинка размером 100px
+>При наведении указателя мышки на картинку ее размер должен плавно увеличиваться до `200px`
+>При клике на картинке она должна исчезать
+>>>>>>> 44cb30b62eed105d657ecede3f1d83b7c2920aec
 ---
 ```js
 var elem = document.body.appendChild (
@@ -52,6 +58,7 @@ elem.onclick = function (event) {
     }
 }
 ```
+<<<<<<< HEAD
 или, вешаем все на родителя, так как событие произойдет и на `img`
 ```js
 var elem = document.body.appendChild (
@@ -104,6 +111,8 @@ elem.onmouseout = function(event) {
     `
 }
 ```
+=======
+>>>>>>> 44cb30b62eed105d657ecede3f1d83b7c2920aec
 ### Additional
 *Создайте коллекцию вложенных друг в друга html-элементов с обработчиками событий `click, mouseover, mouseout`*
 ```js
@@ -164,7 +173,6 @@ for( elem of ["first", "second", "third", "fourth"]) {
 }
     console.log(collection)
 ```
-![alt text](img/1.png)
 *Или без использования addEventListener*
 ```js
 var collection = []
