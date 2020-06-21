@@ -1,5 +1,5 @@
-#Homework DOM 
-###Required
+# Homework DOM 
+### Required
 *Создайте элемент `p`, при клике на котором появляется картинка размером 100px*
 *При наведении указателя мышки на картинку ее размер должен плавно увеличиваться до `200px`*
 *При клике на картинке она должна исчезать*
@@ -52,8 +52,59 @@ elem.onclick = function (event) {
     }
 }
 ```
-![alt text](img/Required.png)
-###Additional
+или, вешаем все на родителя, так как событие произойдет и на `img`
+```js
+var elem = document.body.appendChild (
+    document.createElement ( "p" )
+)
+
+elem.style = `
+    height: 100px;
+    width: 100px;
+    background: #0f0;
+    margin: 0 auto;
+    text-align: center;
+`
+elem.innerText = "Click me"
+
+elem.onclick = function (event) {
+    event.target.innerText = ''
+    if ( event.eventPhase === 3 ) {
+        this.firstChild.remove()
+        this.innerText = "Click me" 
+    }
+    else {
+        let img = event.target.appendChild(
+        document.createElement( "img" )
+        )
+        img.src = "https://doklad-i-referat.ru/image/ptica/popugaj-ara.jpg"
+        img.width = 100
+        img.height = 100
+    }
+}
+elem.onmouseover = function(event) {
+    event.target.style = `
+        width: 200px;
+        height: 200px;
+        transition: all 0.5s;
+        margin: 0 auto;
+        text-align: center;
+        background: #0f0;
+    `
+}
+ 
+elem.onmouseout = function(event) {
+    event.target.style = `
+        width: 100px;
+        height: 100px;
+        transition: all 0.5s;
+        margin: 0 auto;
+        text-align: center;
+        background: #0f0;
+    `
+}
+```
+### Additional
 *Создайте коллекцию вложенных друг в друга html-элементов с обработчиками событий `click, mouseover, mouseout`*
 ```js
 var collection = []
@@ -144,7 +195,7 @@ for( elem of ["first", "second", "third", "fourth"]) {
 }
     console.log(collection)
 ```
-###Additional
+### Additional
 *Условия предыдущего задания изменить так:*
 ```js
 var collection = []
